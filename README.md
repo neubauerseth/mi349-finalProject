@@ -1,6 +1,12 @@
 # mi349-finalProject
 This is my Final Project for my MI 349 Class
 
+# Overview
+For the MI 349 final project you will be required to create a multi-page personal or business website using the tools you've learned this semester. The site should be complete–from and copy and a development standpoint–and fully hosted on a Netlify domain. The personal aspect of the site can be anything you choose. Most students put together a portfolio, resume, or informational page about themselves–but the choice is yours.
+
+# Attention to Detail
+The most important part of the final project is your attention to detail in the work. Because it's only a small site, it's important that your writing be thoughtful and clear, the images you use be professional, and the overall quality of your markup and style be high. Part of your grade will be basic requirements (e.g. does this pass a validation test), the other part will be subjective and graded based on overall effort and quality of the final work.
+
 # Requirements
 ### Your final project must include the following:
 
