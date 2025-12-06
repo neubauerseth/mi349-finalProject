@@ -3,15 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <!-- CSS stylesheets -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <title>Hobbies</title>
 </head>
 <body>
-    <h1>This is hobby.html page</h1>
+    <header>
+        <nav>
+            <img src="assets/web-logo.svg" alt="Website Logo" class="logo">
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M48 384c-8.8 0-16 7.2-16 16 0 44.2 35.8 80 80 80l288 0c44.2 0 80-35.8 80-80 0-8.8-7.2-16-16-16L48 384zM32 202c0 12.2 9.9 22 22 22L458 224c12.2 0 22-9.9 22-22 0-17.2-2.6-34.4-10.8-49.5-22.2-40.8-82.3-120.5-213.2-120.5S65 111.6 42.8 152.5C34.6 167.6 32 184.8 32 202zM0 304c0 17.7 14.3 32 32 32l448 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 272c-17.7 0-32 14.3-32 32zM256 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zM120 128a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm248-24a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" fill="white"/>
+                </svg>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hobbies-section">
+            <div class="hobby-item">
+                <div class="hobby-text">
+                    <p>
+                        My favorite sport to play during my free time is Pickleball, 
+                        I was able to win the IM Doubles 4.0 Pickleball league this fall Semester.
+                    </p>
+                </div>
+                <div class="hobby-image">
+                    <img src="assets/impickleballPic.jpg" alt="pickball winner pic">
+                </div>
+            </div>
+
+            <div class="hobby-item car-collection">
+                <div class="hobby-text">
+                    <p>I enjoy cars and motorcycles, but since I currently don't have the financial ability to buy them I have provided my mental car collection.</p>
+                </div>
+                <div class="car-gallery">
+
+                    <!-- https://www.theverge.com/2018/3/6/17087870/toyota-supra-gr-racing-concept-geneva-motor-show-2018 -->
+                    <figure class="car-item">
+                        <img src="assets/toyota-supra.webp" alt="Toyota Supra picture">
+                        <figcaption>Toyota GR Supra</figcaption>
+                    </figure>
+
+                    <!-- https://www.caranddriver.com/toyota/tacoma-hybrid -->
+                    <figure class="car-item">
+                        <img src="assets/toyota-tacoma.avif" alt="Toyota Tacoma picture">
+                        <figcaption>Toyota Tacoma</figcaption>
+                    </figure>
+
+                    <!-- https://radical-mag.com/en/2025/01/15/sayonara-honda-nsx-2/ -->
+                    <figure class="car-item">
+                        <img src="assets/honda-nsx.jpeg" alt="Honda NSX picture">
+                        <figcaption>Honda NSX</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
 </html>
